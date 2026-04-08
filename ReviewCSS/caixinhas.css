@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+*/
+
+
+
+/*
+centralizar sem flexbox
+    margin: 0 auto;
+*/
+
+/*
+    Deixar com largura de 920px com altura de 800px
+    e centralizado
+*/
+.sessao-noticias{
+    width: 920px;
+    height: 800px;
+
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px;
+    border: 2px dashed salmon;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+/*
+    deixar em coluna e centralizado nos dois eixos
+*/
+.noticia{
+    width: 150px;
+    height: 150px;
+    background-color: salmon;
+    border: 2px dashed black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sigma--noticia{
+    background-color: blue;
+    color: white;
+}
