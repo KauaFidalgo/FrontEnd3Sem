@@ -1,0 +1,137 @@
+/*import font*/
+font-face {
+    font-family: Montserrat;
+    src: url(./fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(to right bottom, #18a2c9, #72c3bd);
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+/*Desktop First*/
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    /*border: 1px solid rgb(255, 255, 255);*/
+}
+
+.container--flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    padding: 10px 0;
+    /*border: 1px solid rgb(255, 255, 255);
+    /*height: 80px;*/
+}
+
+.header__logo {
+    width: 100px;
+}
+
+.header__title {
+    font-family: Montserrat;
+    color: #ded27c;
+}
+
+.header__text {
+    font-family: Montserrat;
+    color: white;
+}
+
+.contact-form{
+    /*border: 1px solid rgb(0, 0, 0);*/
+    padding: 20px 0;
+
+}
+
+.contact-form__linha {
+    /*border: 1px solid rgb(196, 1, 1);*/
+    display: flex;
+}
+
+
+.contact-form__label{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+.contact-form__input{
+    color: #18a2c9;
+    border: none;
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.contact-form__col-a {
+    width: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.contact-form__col-b {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+/*NAME INPUTS*/
+.contact-form__input--metade{
+    width: 49%;
+    height: 35px;
+    border-radius: 3px;
+}
+
+/*EMAIL INPUT*/
+.contact-form__input--mail{
+    width: 100%;
+    height: 35px;
+    border-radius: 3px;
+}
+
+/*TELEFONE INPUT*/
+.contact-form__input--terco{
+    width: 32%;
+    height: 35px;
+    border-radius: 3px;
+}
+
+.contact-form__input--quarto{
+    width: 22%;
+    height: 35px;
+    border-radius: 3px;
+}
+
+
+.contact-form__input:focus{
+    background-color: #72c3bd;
+    color: white;
+    border: 1px solid white;
+}
+
+/*Breakpoints - Tablet*/
+@media screen and (max-width: 991px) {
+    
+}
+
+/*Breakpoints - Mobile*/
+@media screen and (max-width: 767px) {
+     
+}
