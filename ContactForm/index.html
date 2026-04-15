@@ -76,7 +76,7 @@
                             name="+55"
                             id="+55"
                             placeholder="+55"
-                            type="text"
+                            type="number"
                             >
 
                             <input 
@@ -84,7 +84,7 @@
                             name="DDD"
                             id="DDD"
                             placeholder="DDD"
-                            type="text"
+                            type="number"
                             >
 
                             <input 
@@ -92,7 +92,7 @@
                             name="telefone"
                             id="telefone"
                             placeholder="ex: 99999-9999"
-                            type="text"
+                            type="number"
                             >
 
                         </div>
@@ -110,7 +110,7 @@
                             name="cep"
                             id="cep"
                             placeholder="CEP"
-                            type="text"
+                            type="number"
                             >
 
                             <input 
@@ -126,7 +126,7 @@
                             name="numero"
                             id="numero"
                             placeholder="Número"
-                            type="text"
+                            type="number"
                             >
 
                         </div>
@@ -182,6 +182,55 @@
                            
                         </div>
                     </div>
+
+                     <!--anotacoes INPUT-->
+                    <div class="contact-form__linha">
+                        <div class="contact-form__col-a">
+                            <label class="contact-form__label" for="anotacoes">Anotações</label>
+                        </div>
+                        <div class="contact-form__col-b">
+
+                            <textarea 
+                            class="contact-form__input contact-form__input--largoalto"
+                            name="Anotacoes"
+                            id="anotacoes"
+                            placeholder="Suas anotações aqui"></textarea>
+
+                           
+                        </div>
+                    </div>
+                    
+
+                    <!--botoes cadastrar e limpar-->
+                    <div class="contact-form__linha">
+                        <div class="contact-form__col-a">
+                            <label class="contact-form__label" for="cadastrar"></label>
+                        </div>
+                        <div class="contact-form__col-c">
+
+                            <button 
+                            class="button-container contact-form__button--metade"
+                            name="cadastrar"
+                            id="cadastrar"
+                            type="button"
+                            >
+                                Cadastrar
+                            </button>
+
+
+                            <button 
+                            class="button-container contact-form__button--metade"
+                            name="limpar"
+                            id="limpar"
+                            type="reset"
+                            >
+                                Limpar
+                            </button>
+
+
+                        </div>
+                    </div>
+
 
                 </form>
             </div>

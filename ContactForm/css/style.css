@@ -13,8 +13,8 @@ font-face {
 body {
     background-image: linear-gradient(to right bottom, #18a2c9, #72c3bd);
     background-repeat: no-repeat;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 }
 
 /*Desktop First*/
@@ -83,7 +83,8 @@ body {
 .contact-form__col-a {
     width: 10%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    padding-top: 11px;
 }
 
 .contact-form__col-b {
@@ -91,6 +92,14 @@ body {
     justify-content: space-between;
     width: 90%;
 }
+
+.contact-form__col-c {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+
+}
+
 
 /*NAME INPUTS*/
 .contact-form__input--metade{
@@ -117,6 +126,43 @@ body {
     width: 22%;
     height: 35px;
     border-radius: 3px;
+}
+
+/*anotacoes INPUT*/
+.contact-form__input--largoalto {
+  width: 100%;
+  height: 170px;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+/*botoes cadastrar e limpar*/
+.button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 20px;
+    color: #ffffff;
+    border: none;
+}
+
+.contact-form__button--metade {
+   background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    width: 450px;   
+    height: 55px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.contact-form__button--metade:hover {
+    background-color: #72c3bd;
+    color: #ffffff;
 }
 
 
