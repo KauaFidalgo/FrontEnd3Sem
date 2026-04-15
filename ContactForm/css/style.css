@@ -81,6 +81,16 @@ body {
     transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
 
+.contact-form__textarea{
+    color: #18a2c9;
+    border: none;
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
 .contact-form__col-a {
     width: 10%;
     display: flex;
@@ -173,12 +183,94 @@ body {
     border: 1px solid white;
 }
 
-/*Breakpoints - Tablet*/
-@media screen and (max-width: 991px) {
+/* Breakpoints - Tablets */
+@media screen and (max-width: 992px) {
+    body{
+        height: 100vh;
+        width: 100%;
+    }
     
+    .container {
+        max-width: 750px;
+    }
+
+    .header__logo {
+        width: 140px;
+    }
+
+    .header__text {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .contact-form__label {
+        font-size: 13px;
+    }
+
+    .contact-form__col-c {
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+    }
+
+    .contact-form__input,
+    .contact-form__textarea {
+        font-size: 14px;
+    }
 }
 
-/*Breakpoints - Mobile*/
+/* Breakpoints - Smartphones */
 @media screen and (max-width: 767px) {
-     
+    body{
+        height: 100%;
+    }
+    
+    .contact-form__linha {
+        flex-direction: column;
+    }
+
+    .contact-form__col-a,
+    .contact-form__col-b {
+        width: 100%;
+    }
+
+    .button-container{
+    width: 60%;
+    height: 60%;
+    }
+
+    .contact-form__col-c {
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
+    .contact-form__input--metade,
+    .contact-form__input--quarto,
+    .contact-form__input--terco {
+        width: 100%;
+    }
+
+    .contact-form__col-b {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .contact-form__col-a {
+        display: none;
+        padding-top: 0;
+        margin-bottom: 5px;
+    }
+
+    
+
+    .header__text {
+        font-size: 16px;
+    }
+    
 }
