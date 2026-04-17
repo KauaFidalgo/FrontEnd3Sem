@@ -74,7 +74,7 @@
                     <div class="contact-form__col-b">
 
                         <input class="contact-form__input contact-form__input--quarto" name="cep" id="cep"
-                            placeholder="CEP" type="number">
+                            placeholder="CEP" type="number"  onblur="buscarEndereco(this.value)">
 
                         <input class="contact-form__input contact-form__input--metade" name="Rua la de casa" id="rua"
                             placeholder="Rua la de casa" type="text">
@@ -139,7 +139,7 @@
                     <div class="contact-form__col-c">
 
                         <button class="button-container contact-form__button--metade" name="cadastrar" id="cadastrar"
-                            type="button" onclick="minhaFuncao();">
+                            type="button" onclick="validarFormulario();">
                             Cadastrar
                         </button>
 
@@ -157,147 +157,8 @@
         </div>
     </main>
 
-    <script>
-        function minhaFuncao() {
-            let nome = document.getElementById("nome").value.trim(); //pega o valor do campo com o id "nome"
-            let sobrenome = document.getElementById("sobrenome").value.trim();
-            let email = document.getElementById("email").value.trim();
-            let telInfo = document.getElementById("telInfo").value.trim();
-            let DDD = document.getElementById("DDD").value.trim();
-            let telefone = document.getElementById("telefone").value.trim();
-            let cep = document.getElementById("cep").value.trim();
-            let rua = document.getElementById("rua").value.trim();
-            let numero = document.getElementById("numero").value.trim();
-            let apto = document.getElementById("apto").value.trim();
-            let bairro = document.getElementById("bairro").value.trim();
-            let cidade = document.getElementById("cidade").value.trim();
-            let estado = document.getElementById("estado").value.trim();
-            let anotacoes = document.getElementById("anotacoes").value.trim();
-
-
-
-
-
-            if (nome == "") { //verifica se algum dos campos está vazio
-                formError("nome"); //coloca o foco no campo "nome"
-
-            } else {
-                reiniciaBorda("nome"); //reinicia a borda do campo "nome" para o estilo original
-            }
-
-
-            if (sobrenome == "") { //verifica se algum dos campos está vazio
-                formError("sobrenome"); //coloca o foco no campo "sobrenome"
-
-            } else {
-                reiniciaBorda("sobrenome"); //reinicia a borda do campo "sobrenome" para o estilo original
-            }
-
-            if (email == "") { //verifica se algum dos campos está vazio
-                formError("email"); //coloca o foco no campo "email"
-
-            } else {
-                reiniciaBorda("email"); //reinicia a borda do campo "email" para o estilo original
-            }
-
-            if (telInfo == "") { //verifica se algum dos campos está vazio
-                formError("telInfo"); //coloca o foco no campo "telInfo"
-
-            } else {
-                reiniciaBorda("telInfo"); //reinicia a borda do campo "telInfo" para o estilo original
-            }
-
-            if (DDD == "") { //verifica se algum dos campos está vazio
-                formError("DDD"); //coloca o foco no campo "DDD"
-
-            } else {
-                reiniciaBorda("DDD"); //reinicia a borda do campo "DDD" para o estilo original
-            } 
-
-            if (telefone == "") { //verifica se algum dos campos está vazio
-                formError("telefone"); //coloca o foco no campo "telefone"
-
-            } else {
-                reiniciaBorda("telefone"); //reinicia a borda do campo "telefone" para o estilo original
-            }
-
-            if (cep == "") { //verifica se algum dos campos está vazio
-                formError("cep"); //coloca o foco no campo "cep"
-
-            } else {
-                reiniciaBorda("cep"); //reinicia a borda do campo "cep" para o estilo original
-            }
-
-            if (rua == "") { //verifica se algum dos campos está vazio
-                formError("rua"); //coloca o foco no campo "rua"
-
-            } else {
-                reiniciaBorda("rua"); //reinicia a borda do campo "rua" para o estilo original
-            }
-
-            if (numero == "") { //verifica se algum dos campos está vazio
-                formError("numero"); //coloca o foco no campo "numero"
-
-            } else {
-                reiniciaBorda("numero"); //reinicia a borda do campo "numero" para o estilo original
-            }
-
-            if (apto == "") { //verifica se algum dos campos está vazio
-                formError("apto"); //coloca o foco no campo "apto"
-
-            } else {
-                reiniciaBorda("apto"); //reinicia a borda do campo "apto" para o estilo original
-            }
-
-            if (bairro == "") { //verifica se algum dos campos está vazio
-                formError("bairro"); //coloca o foco no campo "bairro"
-
-            } else {
-                reiniciaBorda("bairro"); //reinicia a borda do campo "bairro" para o estilo original
-            }   
-            
-            if (cidade == "") { //verifica se algum dos campos está vazio
-                formError("cidade"); //coloca o foco no campo "cidade"
-
-            } else {
-                reiniciaBorda("cidade"); //reinicia a borda do campo "cidade" para o estilo original
-            }
-
-            if (estado == "") { //verifica se algum dos campos está vazio
-                formError("estado"); //coloca o foco no campo "estado"
-
-            } else {
-                reiniciaBorda("estado"); //reinicia a borda do campo "estado" para o estilo original
-            }
-
-            if (anotacoes == "") { //verifica se algum dos campos está vazio
-                formError("anotacoes"); //coloca o foco no campo "anotacoes"
-
-            } else {
-                reiniciaBorda("anotacoes"); //reinicia a borda do campo "anotacoes" para o estilo original
-            }
-
-
-            //literal template: é a crase `` e não as aspas "" ou ''
-            // console.log(
-            // `Aluno: ${nome} ${sobrenome}
-            //  Email: ${email}`)
-            // ; 
-        }//fim da função
-
-
-        //funcao que pinta o campo de vermelho quando o campo estiver vazio
-
-        function formError(fildId) {
-            document.getElementById(fildId).style.border = "1px solid red";
-        }
-
-        function reiniciaBorda(fildId) {
-            document.getElementById(fildId).style.border = "none";
-        }
-
-    </script>
-
+    <!--colocar js antes de fechar o body-->
+    <script src="js/script.js"></script>
 </body>
 
 </html>
