@@ -1,0 +1,17 @@
+{
+  "usuarios": [
+    {
+      "nome": "Rawany editada",
+      "email": "rswanu@cu.com",
+      "idade": "68",
+      "id": "SfdqlBxyjnE"
+    },
+    {
+      "nome": "milena bot",
+      "email": "milena@cu.com",
+      "idade": "89",
+      "id": "oTBVJwoaTEc"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        .corsim {
+            color: green;
+        }
+
+        .cornao {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" onblur="getElements(this.value);" placeholder="Digite o nome da classe">
+
+    <button onclick="getElements();">Pegar elementos</button>
+    
+    <ul>
+        <li class="corsim">Item 1</li>
+        <li class="cornao">Item 2</li>
+        <li class="corsim">Item 3</li> 
+        <li class="cornao">Item 4</li>
+
+        <!-- li.teste{Novo Item $}*4 -->
+        <li class="teste">Novo Item 1</li>
+        <li class="teste">Novo Item 2</li>
+        <li class="teste">Novo Item 3</li>
+        <li class="teste">Novo Item 4</li>
+    </ul>
+
+    <script>
+        function getElements(nomeClasse = "cornao") {
+            //retorna todos os elementos que possuem a classe "cornao"
+            cornoes = document.getElementsByClassName(nomeClasse);
+            //cornoes2 = document.getElementsByClassName("corsim");
+
+            //Exibir os textos com for ou foreach
+            
+            //Explicando o for e o foreach - for é um laço de repetição que executa um bloco de código enquanto uma condição for verdadeira.
+            //Ele é composto por três partes: a inicialização, a condição e a atualização.
+            //O for é mais flexível e pode ser usado para iterar sobre arrays, objetos, ou qualquer outra estrutura de dados.
+            for (let i = 0; i < cornoes.length; i++) {
+                console.log(cornoes[i].textContent);        
+            }
+
+            
+
+            // for (let i = 0; i < cornoes2.length; i++) {                    
+            //     console.log(cornoes2[i].textContent);
+
+            // }
+    
+                //O foreach é um método específico para arrays que executa uma função para cada elemento do array.
+                //Ele é mais simples de usar e é recomendado quando você precisa iterar sobre um array sem se preocupar com o índice.
+    
+                // cornoes2.forEach(function(item) {
+                //     console.log(item.textContent);
+                // });
+
+        }
+    </script>
+</body>
+</html>

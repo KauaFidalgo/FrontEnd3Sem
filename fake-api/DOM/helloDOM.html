@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href=".css">
+    
+</head>
+<body>
+    <h1 id="titulo">Hello, DOM!</h1>
+
+    <p>JavaScript DOM</p>
+    <button onclick="saudacao();">Click me!</button><br>
+    <button ondblclick="mouseClicadoDuasVezes();">Click double time!</button><br>
+    <button onmousedown="saudacao();">Click me down!</button><br>
+    <button onmouseup="saudacao();">Click me up!</button><br>
+    <button onmouseover="saudacaoLegal();">Passe o mouse!</button><br>  
+
+<script>
+        alert(`Titulo: ${document.getElementById("titulo").textContent}`);
+
+        //JavaScript DOM - Document Object Model
+        //JavaScript é uma linguagem case sensitive
+        //Por convenção, utilizamos camelCase para nomear variáveis e funções
+        // - Maiusculo a partir da segunda palavra
+        function saudacao() {
+            alert("Olá, Davis!");
+            
+        }
+
+        function saudacaoLegal() {
+            alert("Olá, Brukil!");
+        }
+
+        function mouseClicadoDuasVezes() {
+            alert("Olá, moke!");
+        }
+</script>
+</body>
+</html>
