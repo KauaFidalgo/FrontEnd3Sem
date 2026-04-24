@@ -13,5 +13,39 @@
       "id": "oTBVJwoaTEc"
     }
   ],
+  "imc": [
+    {
+      "nome": "Eduardo",
+      "altura": 1.67,
+      "peso": 85,
+      "imc": 30.477966223242138,
+      "textoIMC": "Obesidade",
+      "id": "p1G3Mktn3Sw"
+    },
+    {
+      "nome": "Eduardo",
+      "altura": 1.67,
+      "peso": 85,
+      "imc": 30.477966223242138,
+      "textoIMC": "Obesidade",
+      "id": "dOXum71ZT7Q"
+    },
+    {
+      "nome": "davi",
+      "altura": 1.77,
+      "peso": 85,
+      "imc": 27.13141179099237,
+      "textoIMC": "Sobrepeso",
+      "id": "uB2h6stgz4U"
+    },
+    {
+      "nome": "Rawany",
+      "altura": 1.7,
+      "peso": 50,
+      "imc": 17.301038062283737,
+      "textoIMC": "Magreza leve",
+      "id": "vJE-3WXXqpA"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

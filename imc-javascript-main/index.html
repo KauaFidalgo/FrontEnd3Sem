@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body onload="buscarIMCs()">
     <h1>Cadastro IMC >></h1>
     <form>
         <fieldset>
             <legend>Cadastro</legend>
 
-            <input type="text" value="Eduardo" id="nome" placeholder="Nome">
-            <input type="number" value="1.67" id="altura" placeholder="Altura em Metros ex 1.67">
-            <input type="number" value="85" id="peso" placeholder="Peso em Quilos">
+            <input type="text" value="" id="nome" placeholder="Nome">
+            <input type="number" value="" id="altura" placeholder="Altura em Metros ex 1.67">
+            <input type="number" value="" id="peso" placeholder="Peso em Quilos">
             <button 
                 type="button" 
                 onclick="calcular()">
@@ -41,6 +41,35 @@
         </table>
     </section>
 
+    <script>
+        function calcular() {
+            //entrada de dados
+            const nome = document.getElementById("nome").value;
+            const altura = parseFloat(document.getElementById("altura").value);
+            const peso = parseFloat(document.getElementById("peso").value);
+            const imc = calcularIMC(altura, peso);
+            const textoIMC = gerarTextoIMC(imc);
+            const cadastro = document.getElementById("cadastro");
+
+            //validacao se preencheu todos os campos
+            if(nome.trim().length == 0 || isNaN(altura) || isNaN(peso)) {
+                alert("Preencha todos os campos corretamente.");
+                return;
+            }       
+ 
+            //cadastra um item de cadastro no final da lista    
+            //mantendo os itens anteriores
+            cadastro.innerHTML += 
+            `<tr>
+                <td>${nome}</td>
+                <td>${altura}</td>
+                <td>${peso}</td>
+                <td>${imc}</td>
+                <td>${textoIMC}</td>
+            </tr>`;
+
+        }
+    </script>
 
     <script src="./js/script.js"></script>
 </body>
