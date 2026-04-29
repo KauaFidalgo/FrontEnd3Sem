@@ -31,14 +31,7 @@
 
     if(retorno) {
 
-        const linhaTabela =
-        `<tr>
-            <td>${nome}</td>
-            <td>${altura}</td>
-            <td>${peso}</td>
-            <td>${imc.toFixed(2)}</td>
-            <td>${textoIMC}</td>
-        </tr>`;
+        buscarIMCs(); //faz um get e coloca todo mundo no html (tabela)
 
         document.getElementById("cadastro").innerHTML += linhaTabela;
 
@@ -112,6 +105,10 @@
         try {
             const retorno = await fetch("http://localhost:3000/imc");
             const dadosRetornados = await retorno.json();
+
+            dadosRetornados.sort((a, b) => {
+                return a.nome.localeCompare(b.nome);
+            }); //ordenar os dados por ordem alfabética, do nome, antes de exibir na tabela
 
             console.log(dadosRetornados);//dados do cadastro
 

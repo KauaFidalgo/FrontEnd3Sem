@@ -45,6 +45,52 @@
       "imc": 17.301038062283737,
       "textoIMC": "Magreza leve",
       "id": "vJE-3WXXqpA"
+    },
+    {
+      "nome": "Pauleta",
+      "altura": 1.75,
+      "peso": 70,
+      "imc": 22.857142857142858,
+      "textoIMC": "Peso normal",
+      "id": "zJw9Prt-6S8"
+    },
+    {
+      "nome": "Kaua",
+      "altura": 1.72,
+      "peso": 80,
+      "imc": 27.041644131963228,
+      "textoIMC": "Sobrepeso",
+      "id": "-tjxHV_hAN4"
+    }
+  ],
+  "numeros": [
+    {
+      "n1": 1,
+      "n2": 2,
+      "op": "soma",
+      "resultado": "3.00",
+      "id": "WZKdyfstmFc"
+    },
+    {
+      "n1": 3,
+      "n2": 2,
+      "op": "soma",
+      "resultado": "5.00",
+      "id": "OgGq05JIVbY"
+    },
+    {
+      "n1": 15,
+      "n2": 15,
+      "op": "subtracao",
+      "resultado": "0.00",
+      "id": "R_0BEo2vk8c"
+    },
+    {
+      "n1": 6,
+      "n2": 7,
+      "op": "soma",
+      "resultado": "13.00",
+      "id": "oj33jIdbxtQ"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
