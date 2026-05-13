@@ -11,7 +11,7 @@ function Aluno({nome, curso, hero}) {
             />
 
             <p>
-                {nome} -
+                {nome} - 
                 {curso}
             </p>
 

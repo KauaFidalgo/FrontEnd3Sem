@@ -192,17 +192,19 @@ function App() {
     // </>
 
     //ex10
-    // <>
-    //   <ItemLoja />
-    // </>
+    //  <>
+    //    <Itemloja nome="Carne" preco={30.87} categoria="Proteina animal" estoque={0}/>
+    //  </>
 
 
     // <>
     //   <Produtos />
     // </>
 
-    <>
-    </>
+
+
+    <></>
+
   )
  
 }

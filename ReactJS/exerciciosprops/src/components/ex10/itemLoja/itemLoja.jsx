@@ -1,5 +1,26 @@
-import './itemLoja.css'
+import { useState } from "react"
+import "./itemLoja.css"
 
-export default function ItemLoja({nome, preco, categoria, estoque}){
+export default function Itemloja({ nome, preco, estoque, categoria, checagem}) {
+        if(estoque <=0){
+            checagem = "Produto-indisponível"
+        }else{
+             checagem = "Produto-disponivel"
+        }
     
+
+
+    return (
+        <div className="loja">
+            <p className="loja_item">
+                |Nome: {nome}
+                |preco: {preco}
+                |categoria: {categoria}
+
+                |estoque: {estoque}
+                |{checagem}
+            </p>
+        </div>
+    )
+
 }
