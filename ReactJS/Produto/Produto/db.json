@@ -1,0 +1,21 @@
+{
+  "produtos": [
+    {
+      "nome": "Gustavo come trans",
+      "preco": 100,
+      "descricao": "Contrae-o para comer todos eles",
+      "quantidade": 1,
+      "imagem": "image.jpg",
+      "id": "0dzqQrLvdXk"
+    },
+    {
+      "nome": "Gustaveiro",
+      "preco": 1000,
+      "descricao": "cuzin",
+      "quantidade": 3,
+      "imagem": "image.jpg",
+      "id": "0vG1Co-U_rQ"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
