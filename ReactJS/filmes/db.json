@@ -1,0 +1,9 @@
+{
+  "generos": [
+    {
+      "id": "1",
+      "nome": "Ação"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
