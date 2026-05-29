@@ -26,53 +26,39 @@ function RSVP() {
 
     try {
 
-      const resposta =  fetch(`${API}/convidados`)
+      const registerRes = await fetch(`${API}/auth/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nome, idade, instagram, senha }),
+      })
 
-      if (resposta.status === 201) {
+      if (registerRes.ok) {
+        const convidadoRes = await fetch(`${API}/convidados`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(convidado),
+        })
 
-        localStorage.setItem(
-          "usuarioFesta",
-          JSON.stringify(convidado)
-        )
+        if (convidadoRes.ok) {
+          localStorage.setItem("usuarioFesta", JSON.stringify(convidado))
+          alert("Cadastro realizado 🔥")
+          window.location.href = "/"
+        } else {
+          const data = await convidadoRes.json().catch(() => null)
+          alert(data?.message || "Erro ao cadastrar convidado")
+        }
 
-        alert("Cadastro realizado 🔥")
-
-        window.location.href = "/"
-
+      } else {
+        const data = await registerRes.json().catch(() => null)
+        alert(data?.message || "Erro no registro")
       }
 
     } catch (error) {
-
       console.log(error)
-
+      alert("Erro de rede. Tente novamente mais tarde.")
     }
   }
 
-  await fetch(
-
-    `${API}/auth/register`,
-
-    {
-
-      method: "POST",
-
-      headers: {
-        "Content-Type":
-          "application/json"
-      },
-
-      body: JSON.stringify({
-
-        nome,
-        idade,
-        instagram,
-        senha
-
-      })
-
-    }
-
-  )
 
   return (
     <>
