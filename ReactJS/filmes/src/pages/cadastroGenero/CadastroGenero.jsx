@@ -20,12 +20,12 @@ const CadastroGenero = () => {
 
         try {
 
-            const retornoAPI = await api.get("/generos")
+            const retornoAPI = await api.get("/Genero")
 
             setListaGeneros(retornoAPI.data)
 
         } catch (error) {
-            Swal.fire({
+            Alerta({
                 title: 'Cadastro de Genero',
                 text: 'Erro ao buscar gêneros',
                 icon: 'error',
@@ -45,7 +45,7 @@ const CadastroGenero = () => {
         e.preventDefault()
 
         // validar campo
-        if (valor.trim().length === 0) {
+        if (valor.trim().length == 0) {
             // alert("O campo gênero é obrigatório!")
             Alerta({
                 title: 'Cadastro de Genero',
@@ -68,7 +68,7 @@ const CadastroGenero = () => {
 
         try {
 
-            const retornaAPI = await api.post("/generos", objCadastro);
+            await api.post("/Genero", objCadastro)
 
             Alerta({
                 title: 'Cadastro de Genero',
@@ -81,7 +81,7 @@ const CadastroGenero = () => {
             await getGeneros()
 
             // limpar campo
-            limparDados()
+            setValor("")
 
         } catch (error) {
             Alerta({
@@ -109,7 +109,7 @@ const CadastroGenero = () => {
         //     return false
         // }
 
-        const result = await Swal.fire({
+        const result = await Alerta({
             title: "Are you sure?",
             text: `Quer apagar o genero ${item.nome}`,
             icon: "warning",
@@ -117,20 +117,23 @@ const CadastroGenero = () => {
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Apagar",
-            cancelButtonText: "Cancelar"    
+            cancelButtonText: "Cancelar"
         })
 
         if (!result.isConfirmed) {
-            //se não quer apagar para por aqui
             return false
         }
 
-        try {//se quer apagar chama na api
+        try {
 
-            const retornoAPI = await api.delete(`/generos/${item.id}`)
+            const retornoAPI = await api.delete(
+                `/Genero/${item.idGenero}`
+            )
 
             if (
-                retornoAPI.status === 200 || retornoAPI.status === 204) {
+                retornoAPI.status === 200 ||
+                retornoAPI.status === 204
+            ) {
                 Alerta({
                     title: 'Cadastro de Genero',
                     text: 'Gênero excluído com sucesso!',
@@ -157,7 +160,7 @@ const CadastroGenero = () => {
     const preEditar = (item) => {
         setEditar(true)
         setValor(item.nome)
-        setId(item.id)
+        setId(item.idGenero)
     }
 
     // EDITAR GÊNERO
@@ -165,8 +168,7 @@ const CadastroGenero = () => {
 
         e.preventDefault()
 
-        // validar campo
-        if (valor.trim().length == 0) {
+        if (valor.trim().length === 0) {
             Alerta({
                 title: 'Cadastro de Genero',
                 text: 'O campo gênero é obrigatório!',
@@ -175,7 +177,6 @@ const CadastroGenero = () => {
             })
 
             return
-
         }
 
         const objEditar = {
@@ -184,8 +185,16 @@ const CadastroGenero = () => {
 
         try {
 
-            const retornoAPI = await api.put(`/generos/${id}`, objEditar)
-            if (retornoAPI.status == 200 || retornoAPI.status == 204) {
+            const retornoAPI = await api.put(
+                `/Genero/${id}`,
+                objEditar
+            )
+
+            if (
+                retornoAPI.status === 200 ||
+                retornoAPI.status === 204
+            ) {
+
                 Alerta({
                     title: 'Cadastro de Genero',
                     text: 'Gênero editado com sucesso!',
@@ -193,23 +202,22 @@ const CadastroGenero = () => {
                     confirmButtonText: 'Fechar'
                 })
 
-                // atualizar lista
                 await getGeneros()
 
-                // limpar dados
                 limparDados()
             }
 
         } catch (error) {
+
+            console.log(error)
+
             Alerta({
                 title: 'Cadastro de Genero',
                 text: 'Erro ao editar gênero',
                 icon: 'error',
                 confirmButtonText: 'Fechar'
             })
-
         }
-
     }
 
     return (
@@ -225,6 +233,8 @@ const CadastroGenero = () => {
                     visibilidade="none"
                     placeholder="gênero"
 
+                    listaGeneros={listaGeneros}
+
                     funcCadastro={
                         editar
                             ? editarGenero
@@ -232,11 +242,8 @@ const CadastroGenero = () => {
                     }
 
                     valor={valor}
-
                     setValor={setValor}
-
                     btnEditar={editar}
-
                     cancelarEdicao={limparDados}
                 />
 

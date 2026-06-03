@@ -1,7 +1,13 @@
 import './App.css'
-import Rotas from './routes/Routes'
+import Rotas from './routes/routes'
 
-//arrow function
-const App = () => <Rotas />
+function App() {
+  return (
+    <>
+      <Rotas />
+    </>
+  )
+}
 
 export default App
+
