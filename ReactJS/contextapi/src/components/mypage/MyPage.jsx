@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { UsuarioContext } from "../../context/UsuarioContext"
+import ListaProduto from "../listarProduto/ListaProduto"
 
 const MyPage = () => {
     // extrai o usuário para utilizar os seus dados
