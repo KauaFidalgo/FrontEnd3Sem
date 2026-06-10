@@ -2,9 +2,11 @@ import "./FestaChat.css"
 
 import { useEffect, useState } from "react"
 
-import io from "socket.io-client"
+//import io from "socket.io-client"
 
-const socket = io(`${API}`)
+const API = "http://localhost:5000"
+
+//const socket = io(API)
 
 function FestaChat() {
 
@@ -30,7 +32,7 @@ function FestaChat() {
 
         return () => {
 
-            socket.off("receberMensagem")
+            //socket.off("receberMensagem")
 
         }
 
@@ -40,7 +42,7 @@ function FestaChat() {
 
         try {
 
-            const resposta = await fetch(`${API}/chat`)
+            const resposta = await fetch(`${API}/api/chat`)
 
             const dados = await resposta.json()
 
@@ -54,31 +56,38 @@ function FestaChat() {
 
     }
 
-    function enviarMensagem(e) {
+    async function enviarMensagem(e) {
+    e.preventDefault()
 
-        e.preventDefault()
+    if (!mensagem.trim()) return
 
-        if (!mensagem.trim()) return
+    const usuario = JSON.parse(
+        localStorage.getItem("usuarioFesta")
+    )
 
-        const usuario = JSON.parse(
-            localStorage.getItem("usuarioFesta")
-        )
+    const novaMensagem = {
+        nome: usuario.nome,
+        mensagem
+    }
 
-        const novaMensagem = {
+    try {
 
-            usuario: usuario.nome,
+        await fetch("http://localhost:5000/api/chat", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(novaMensagem)
+        })
 
-            mensagem
-
-        }
-
-        socket.emit(
-            "novaMensagem",
-            novaMensagem
-        )
+        buscarMensagens()
 
         setMensagem("")
+
+    } catch(error) {
+        console.log(error)
     }
+}
 
     return (
 
